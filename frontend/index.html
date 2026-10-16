@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Heart Health AI machine-learning heart disease risk assessment form">
+  <title>Heart Health AI | Patient Assessment</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="brand">
+      <div class="brand-icon" aria-hidden="true">♥</div>
+      <div class="brand-name">Heart Health AI</div>
+    </header>
+
+    <h1>Heart Disease Risk Assessment</h1>
+    <p class="subtitle">Enter the patient's clinical information below to generate a machine-learning prediction. Please ensure the values use the same category encoding as the model's training dataset.</p>
+
+    <form id="predictionForm" novalidate>
+      <section class="section" aria-labelledby="patient-section-title">
+        <h2 class="section-title" id="patient-section-title">Patient Information</h2>
+        <p class="section-description">Enter the patient's age, sex, and measured clinical values.</p>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="age">Age (years)</label>
+            <input id="age" name="age" type="number" min="1" max="120" step="1" placeholder="e.g. 52" required>
+          </div>
+          <div class="form-group">
+            <label for="sex">Sex</label>
+            <select id="sex" name="sex" required>
+              <option value="" selected disabled>Select sex</option>
+              <option value="0">Female (0)</option>
+              <option value="1">Male (1)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="trestbps">Resting blood pressure (mm Hg)</label>
+            <input id="trestbps" name="trestbps" type="number" min="1" max="300" step="1" placeholder="e.g. 130" required>
+          </div>
+          <div class="form-group">
+            <label for="chol">Serum cholesterol (mg/dl)</label>
+            <input id="chol" name="chol" type="number" min="0" max="1000" step="1" placeholder="e.g. 246" required>
+          </div>
+          <div class="form-group">
+            <label for="thalach">Maximum heart rate achieved</label>
+            <input id="thalach" name="thalach" type="number" min="1" max="300" step="1" placeholder="e.g. 150" required>
+          </div>
+          <div class="form-group">
+            <label for="oldpeak">Oldpeak (ST depression)</label>
+            <input id="oldpeak" name="oldpeak" type="number" min="-10" max="20" step="any" placeholder="e.g. 1.4" required>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="clinical-section-title">
+        <h2 class="section-title" id="clinical-section-title">Clinical Test Results</h2>
+        <p class="section-description">Select the encoded values that correspond to the patient's clinical findings.</p>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="cp">Chest pain type</label>
+            <select id="cp" name="cp" required>
+              <option value="" selected disabled>Select chest pain type</option>
+              <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option>
+            </select>
+            <small class="field-help">Choose the numeric category used in the training dataset.</small>
+          </div>
+          <div class="form-group">
+            <label for="fbs">Fasting blood sugar greater than 120 mg/dl</label>
+            <select id="fbs" name="fbs" required>
+              <option value="" selected disabled>Select value</option>
+              <option value="0">No (0)</option><option value="1">Yes (1)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="restecg">Resting ECG result</label>
+            <select id="restecg" name="restecg" required>
+              <option value="" selected disabled>Select ECG category</option>
+              <option value="0">0</option><option value="1">1</option><option value="2">2</option>
+            </select>
+            <small class="field-help">Choose the numeric category used in the training dataset.</small>
+          </div>
+          <div class="form-group">
+            <label for="exang">Exercise-induced angina</label>
+            <select id="exang" name="exang" required>
+              <option value="" selected disabled>Select value</option>
+              <option value="0">No (0)</option><option value="1">Yes (1)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="slope">Slope of peak exercise ST segment</label>
+            <select id="slope" name="slope" required>
+              <option value="" selected disabled>Select slope category</option>
+              <option value="0">0</option><option value="1">1</option><option value="2">2</option>
+            </select>
+            <small class="field-help">Choose the numeric category used in the training dataset.</small>
+          </div>
+          <div class="form-group">
+            <label for="ca">Number of major vessels (ca)</label>
+            <select id="ca" name="ca" required>
+              <option value="" selected disabled>Select vessel count</option>
+              <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="thal">Thalassemia (thal)</label>
+            <select id="thal" name="thal" required>
+              <option value="" selected disabled>Select thal category</option>
+              <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option>
+            </select>
+            <small class="field-help">Use the exact category encoding from the dataset used to train the model.</small>
+          </div>
+        </div>
+      </section>
+
+      <div class="section">
+        <button class="predict-button" type="submit">Assess Heart Disease Risk</button>
+        <p class="medical-note">This tool provides a machine-learning estimate for informational and educational use only. It is not a diagnosis and does not replace advice from a qualified healthcare professional.</p>
+      </div>
+    </form>
+
+    <footer class="footer">Heart Health AI · Machine-learning-based assessment · Not a medical diagnosis</footer>
+  </main>
+  <script src="/static/script.js" defer></script>
+</body>
+</html>

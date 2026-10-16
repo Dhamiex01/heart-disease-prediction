@@ -1,0 +1,462 @@
+/* ============================================================
+   GENERAL
+============================================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f4f7fb;
+
+    color: #073b82;
+}
+
+
+/* ============================================================
+   PAGE WRAPPER
+============================================================ */
+
+.page-wrapper {
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 30px 20px;
+}
+
+
+/* ============================================================
+   MAIN CONTAINER
+============================================================ */
+
+.container {
+    width: 100%;
+
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    padding: 40px 55px;
+
+    background: #ffffff;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 15px 45px rgba(0, 47, 100, 0.08);
+}
+
+
+/* ============================================================
+   BRAND
+============================================================ */
+
+.brand {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    margin-bottom: 28px;
+}
+
+.brand-icon {
+    width: 46px;
+
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #3168e8;
+
+    color: #ffffff;
+
+    border-radius: 12px;
+
+    font-size: 25px;
+
+    font-weight: bold;
+}
+
+.brand-name {
+    font-size: 22px;
+
+    font-weight: 700;
+
+    color: #073b82;
+}
+
+
+/* ============================================================
+   PAGE HEADER
+============================================================ */
+
+.page-header {
+    text-align: center;
+
+    margin-bottom: 55px;
+}
+
+.page-header h1 {
+    margin: 0 0 14px;
+
+    font-size: 36px;
+
+    line-height: 1.2;
+
+    color: #063b82;
+}
+
+.page-header p {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    color: #3262a0;
+}
+
+
+/* ============================================================
+   SECTION
+============================================================ */
+
+.section {
+    margin-bottom: 42px;
+}
+
+.section h2 {
+    margin: 0 0 6px;
+
+    font-size: 23px;
+
+    color: #073b82;
+}
+
+.section-description {
+    margin: 0 0 25px;
+
+    font-size: 13px;
+
+    color: #3262a0;
+}
+
+
+/* ============================================================
+   FORM GRID
+============================================================ */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 27px 22px;
+}
+
+
+/* ============================================================
+   FORM GROUP
+============================================================ */
+
+.form-group {
+    width: 100%;
+}
+
+
+/* ============================================================
+   LABEL
+============================================================ */
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #073b82;
+}
+
+
+/* ============================================================
+   INPUTS / SELECTS
+============================================================ */
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    height: 54px;
+
+    padding: 0 16px;
+
+    border: 1px solid #c9d9f0;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #073b82;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.form-group input::placeholder {
+    color: #9aacc4;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #3168e8;
+
+    box-shadow:
+        0 0 0 3px rgba(49, 104, 232, 0.12);
+}
+
+
+/* ============================================================
+   FIELD HELP
+============================================================ */
+
+.field-help {
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+
+    color: #3262a0;
+}
+
+
+/* ============================================================
+   VALIDATION ERROR
+============================================================ */
+
+.field-error {
+    display: block;
+
+    margin-top: 5px;
+
+    min-height: 16px;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+
+    color: #dc2626;
+
+    font-weight: 600;
+}
+
+
+/* ============================================================
+   INVALID INPUT
+============================================================ */
+
+.form-group input.input-error,
+.form-group select.input-error {
+    border-color: #dc2626;
+
+    background: #fff8f8;
+
+    box-shadow:
+        0 0 0 2px rgba(220, 38, 38, 0.08);
+}
+
+
+/* ============================================================
+   GENERAL FORM ERROR
+============================================================ */
+
+.form-error {
+    display: none;
+
+    margin: 10px 0 20px;
+
+    padding: 13px 16px;
+
+    border: 1px solid #f2a0a0;
+
+    border-radius: 10px;
+
+    background: #fff3f3;
+
+    color: #dc2626;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-align: center;
+}
+
+.form-error.show {
+    display: block;
+}
+
+
+/* ============================================================
+   SUBMIT BUTTON
+============================================================ */
+
+.submit-button {
+    width: 100%;
+
+    height: 56px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: #1749a4;
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.1s ease,
+        box-shadow 0.2s ease;
+}
+
+.submit-button:hover {
+    background: #0d3d91;
+
+    box-shadow:
+        0 7px 18px rgba(23, 73, 164, 0.22);
+}
+
+.submit-button:active {
+    transform: translateY(1px);
+}
+
+.submit-button:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.65;
+
+    box-shadow: none;
+}
+
+
+/* ============================================================
+   FOOTER
+============================================================ */
+
+footer {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 45px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #dbe5f1;
+
+    color: #3262a0;
+
+    font-size: 11px;
+
+    text-align: center;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 800px) {
+
+    .container {
+        padding: 30px 25px;
+
+        border-radius: 18px;
+    }
+
+    .page-header h1 {
+        font-size: 30px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .brand-name {
+        font-size: 20px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .page-wrapper {
+        padding: 15px 10px;
+    }
+
+    .container {
+        padding: 25px 18px;
+    }
+
+    .page-header {
+        margin-bottom: 40px;
+    }
+
+    .page-header h1 {
+        font-size: 26px;
+    }
+
+    .section h2 {
+        font-size: 21px;
+    }
+
+    footer {
+        gap: 6px;
+    }
+
+}
